@@ -1,0 +1,33 @@
+extends head
+block nav
+    .backdrop
+    header.main-header
+        button#side-menu-toggle Menu
+        nav.main-header__nav
+            ul.main-header__item-list
+                li.main-header__item
+                    a(class=path==='/' ? 'active': undefined href='/') Shop
+                li.main-header__item
+                    a(class=path==='/products' ? 'active': undefined href='/products') Products
+                li.main-header__item
+                    a(class=path==='/cart' ? 'active': undefined href='/cart') Cart
+                li.main-header__item
+                    a(class=path==='/orders' ? 'active': undefined href='/orders') Orders
+                li.main-header__item
+                    a(class=path==='/admin/add-product' ? 'active': undefined href='/admin/add-product') Add Product
+                li.main-header__item
+                    a(class=path==='/admin/products' ? 'active': undefined href='/admin/products') Admin Products
+    nav.mobile-nav
+        ul.mobile-nav__item-list
+            li.mobile-nav__item
+                a(class=path==='/' ? 'active' : undefined href="/") Shop
+            li.mobile-nav__item
+                a(class=path==='/products' ? 'active' : undefined href="/products") Products
+            li.mobile-nav__item
+                a(class=path==='/cart' ? 'active' : undefined href="/cart") Cart
+            li.mobile-nav__item
+                a(class=path==='/orders' ? 'active' : undefined href="/") Orders
+            li.mobile-nav__item
+                a(class=path==='/admin/add-product' ? 'active' : undefined href="/admin/add-product") Add Product
+            li.mobile-nav__item
+                a(class=path==='/admin/products' ? 'active' : undefined href="/admin/products") Admin Products    

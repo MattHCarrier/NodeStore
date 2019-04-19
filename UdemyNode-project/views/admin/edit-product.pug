@@ -1,0 +1,24 @@
+extends ../layouts/navigation 
+block append styles 
+    link(rel="stylesheet", href="/css/forms.css")
+    link(rel="stylesheet", href="/css/product.css")
+block content
+     main
+        form.product-form(action=editing ? '/admin/edit-product' : '/admin/add-product' method="POST")
+            .form-control
+                label(for="title") Title
+                input(type="text" name="title" id="title" value=editing ? product.title : undefined)
+            .form-control
+                label(for="imageUrl") Image URL
+                input(type="text" name="imageUrl" id="imageUrl" value=editing ? product.imageUrl : undefined)
+            .form-control
+                label(for="price") Price
+                input(type="text" name="price" id="price" value=editing ? product.price : undefined)
+            .form-control
+                label(for="description") Description
+                input(type="text" name="description" id="description" value=editing ? product.description : undefined)
+            if editing
+                input(type="hidden" value=product.id name="productId")
+            button.btn(type="submit") #{editing ? 'Update Product' : 'Add Product'} 
+
+

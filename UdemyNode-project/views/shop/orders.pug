@@ -1,0 +1,12 @@
+extends ../layouts/navigation.pug
+block content
+    if orders.length<=0
+        h1 Nothing there!
+    else
+        ul
+            for order in orders
+                li
+                    h1 #{order.id}
+                    ul
+                        for product in order.products
+                            li #{product.title '(' product.orderItem.quantity ')'}

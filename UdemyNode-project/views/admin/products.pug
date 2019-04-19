@@ -1,0 +1,25 @@
+extends ../layouts/navigation.pug
+block append styles
+    link(rel="stylesheet", href="/css/product.css")
+block content
+    if prods.length >=0
+        .grid
+            for product in prods
+                article.card.product-item
+                    header.card__header
+                        h1.product__title #{product.title}
+                    .card__image
+                        img(src=product.imageUrl, alt=product.title)
+                    .card__content
+                        h2.product__price #{product.price}
+                        p.product__desscription #{product.description}
+                    .card__actions
+                        a.btn(href="/admin/edit-product/"+product.id+"?edit=true") Edit
+                        form(action="/admin/delete-product" method="post")
+                            input(type="hidden" value=product.id name="productId")
+                            button.btn(type="submit") Delete
+                        
+    else
+        h1 No products found!
+
+                        
